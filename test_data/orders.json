@@ -1,0 +1,11 @@
+[
+  {
+    "user_id": "1",
+    "product_id": "79",
+    "product_name": "5 star 10gm Chocobar",
+    "product_amount": 5,
+    "qty": 1,
+    "tax_amt": 0.5,
+    "total_amt": 5.5
+  }
+]

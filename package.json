@@ -1,0 +1,21 @@
+{
+  "name": "playwright-ts-api-testing",
+  "version": "1.0.0",
+  "description": "API Testing sample tests using Playwright TypeScript",
+  "keywords": [
+    "npm",
+    "TS",
+    "Playwright",
+    "API",
+    "Testing"
+  ],
+  "license": "ISC",
+  "author": "Faisal Khatri",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {},
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^25.0.3"
+  }
+}
