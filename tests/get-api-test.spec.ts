@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-test("Get Order details API test with status check", async ({ request }) => {
+test("Get Order details API test with status code check", async ({ request }) => {
   const response = await request.get("http://localhost:3004/getOrder/", {
     params: {
       user_id: 1,
@@ -10,11 +10,22 @@ test("Get Order details API test with status check", async ({ request }) => {
   expect(response.status()).toBe(200);
 });
 
+test("Get Order details API test with status code 404", async ({ request }) => {
+  const response = await request.get("http://localhost:3004/getOrder/", {
+    params: {
+      id: 2,
+    },
+  });
+
+  expect(response.status()).toBe(404);
+});
+
+
 test("Get Order details API test with multiple params", async ({ request }) => {
   const params = {
     id: 1,
-    user_id: 1,
-    product_id: 79,
+    user_id: "1",
+    product_id: "79",
   };
   const response = await request.get("http://localhost:3004/getOrder/", {
     params,
@@ -26,7 +37,8 @@ test("Get Order details API test with multiple params", async ({ request }) => {
 test("Get Order details API test with headers", async ({ request }) => {
   const response = await request.get("http://localhost:3004/getOrder/", {
     params: {
-      user_id: 1,
+      id: 1,
+      user_id: "1",
     },
     headers: {
       ContentType: "application/json",
@@ -54,7 +66,7 @@ test("Get order details API test with fail on status code", async ({
 }) => {
   const response = await request.get("http://localhost:3004/getOrder/", {
     params: {
-      user_id: 6,
+      user_id: "1",
     },
     headers: {
       ContentType: "application/json",
@@ -66,12 +78,13 @@ test("Get order details API test with fail on status code", async ({
 test("GET Order details and perform structure check", async ({ request }) => {
   const response = await request.get("http://localhost:3004/getOrder/", {
     params: {
-      user_id: 1,
+      user_id: "1",
     },
     failOnStatusCode: true,
   });
 
   const responseBody = await response.json();
+
   expect(responseBody).toHaveProperty("message");
   expect(responseBody).toHaveProperty("orders");
   expect(responseBody.orders[0]).toHaveProperty("id");
@@ -140,7 +153,7 @@ test("Get order and verify matching object and array", async ({ request }) => {
 test("Get order and verify matching object", async ({ request }) => {
   const response = await request.get("http://localhost:3004/getOrder/", {
     params: {
-      user_id: 1,
+      user_id: "1",
     },
     failOnStatusCode: true,
   });
@@ -179,12 +192,44 @@ test("Get Order details API test with best practice", async ({ request }) => {
   );
 });
 
+test('Get order details and extract the order id', async({request}) => {
+
+  const response = await request.get("http://localhost:3004/getOrder/", {
+    params: {
+      id: 1,
+    },
+    failOnStatusCode: true,
+  });
+
+  const responseBody = await response.json();
+
+  expect(responseBody.message).toBe("Order found!!");
+  expect(responseBody.orders.length).toBeGreaterThan(0);
+
+  expect(responseBody.orders).toEqual(
+    expect.arrayContaining([
+      expect.objectContaining({
+        id: 1,
+        product_name: "5 star 10gm Chocobar",
+      }),
+    ])
+  );
+  
+  const order = responseBody.orders[0];
+  expect(order.id).not.toBeNull();
+  const order_id= order.id;
+  console.log(order_id);
+
+  const product_name = order.product_name
+  console.log(product_name)
+});
+
 test("Get order details API and attach the response details to the report", async ({
   request,
 }, testInfo) => {
   const response = await request.get("http://localhost:3004/getOrder/", {
     params: {
-      user_id: 1,
+      user_id: "1",
     },
   });
 
