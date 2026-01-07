@@ -18,6 +18,10 @@ You will get the answers to the following questions and its respective working c
 ## :writing_hand: Blog Links
 - [What is API Testing?](https://mfaisalkhatri.github.io/2020/08/08/apitesting/)
 
+## :movie_camera: Tutorial Video
+
+[![Watch the video](https://img.youtube.com/vi/UOYuVCkUM5M/hqdefault.jpg)](https://www.youtube.com/watch?v=UOYuVCkUM5M&t=1s)
+
 ## :question: Need Assistance?
 
 - Discuss your queries by writing to me @ `mohammadfaisalkhatri@gmail.com`
