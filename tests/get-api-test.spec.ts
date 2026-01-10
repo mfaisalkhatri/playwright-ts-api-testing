@@ -3,7 +3,7 @@ import { test, expect } from "@playwright/test";
 test("Get Order details API test with status code check", async ({ request }) => {
   const response = await request.get("http://localhost:3004/getOrder/", {
     params: {
-      user_id: 1,
+      user_id: "1",
     },
   });
 
@@ -51,7 +51,7 @@ test("Get Order details API test with headers", async ({ request }) => {
 test("Get order details API test with timeout", async ({ request }) => {
   const response = await request.get("http://localhost:3004/getOrder/", {
     params: {
-      user_id: 1,
+      user_id: "1",
     },
     headers: {
       ContentType: "application/json",
@@ -96,7 +96,7 @@ test("Get order details and perform basic level verification", async ({
 }) => {
   const response = await request.get("http://localhost:3004/getOrder/", {
     params: {
-      user_id: 1,
+      user_id: "1",
     },
     failOnStatusCode: true,
   });
@@ -128,7 +128,7 @@ test("Get order and verify order details", async ({ request }) => {
 test("Get order and verify matching object and array", async ({ request }) => {
   const response = await request.get("http://localhost:3004/getOrder/", {
     params: {
-      user_id: 1,
+      user_id: "1",
     },
     failOnStatusCode: true,
   });
@@ -172,7 +172,7 @@ test("Get order and verify matching object", async ({ request }) => {
 test("Get Order details API test with best practice", async ({ request }) => {
   const response = await request.get("http://localhost:3004/getOrder/", {
     params: {
-      user_id: 1,
+      user_id: "1",
     },
     failOnStatusCode: true,
   });
