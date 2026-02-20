@@ -21,10 +21,27 @@ test("POST order details API with static JSON Array", async ({ request }) => {
     total_amt: 11
   }
 ],
- headers: {
+});
+  expect(response.status()).toBe(201);
+});
+
+test.only("POST order details API using JSON.Stringify", async ({ request }) => {
+
+    const orderData = [{
+        user_id: "5",
+        product_id: "64",
+        product_name: "Cadbury Mini",
+        product_amount: 5,
+        qty: 3,
+        tax_amt: 1,
+        total_amt: 16
+
+    }];
+  const response = await request.post("http://localhost:3004/addOrder/", {
+    data: JSON.stringify(orderData),
+    headers: {
       "Content-Type": "application/json",
     },
 });
   expect(response.status()).toBe(201);
 });
-
