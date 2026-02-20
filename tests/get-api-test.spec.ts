@@ -5,6 +5,9 @@ test("Get Order details API test with status code check", async ({ request }) =>
     params: {
       user_id: "1",
     },
+     headers: {
+      ContentType: "application/json",
+    },
   });
 
   expect(response.status()).toBe(200);
