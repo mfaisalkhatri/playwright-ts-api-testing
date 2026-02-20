@@ -6,7 +6,7 @@ test("Get Order details API test with status code check", async ({ request }) =>
       user_id: "1",
     },
      headers: {
-      ContentType: "application/json",
+      "Content-Type": "application/json",
     },
   });
 
@@ -44,7 +44,7 @@ test("Get Order details API test with headers", async ({ request }) => {
       user_id: "1",
     },
     headers: {
-      ContentType: "application/json",
+      "Content-Type": "application/json",
     },
   });
 
@@ -57,7 +57,7 @@ test("Get order details API test with timeout", async ({ request }) => {
       user_id: "1",
     },
     headers: {
-      ContentType: "application/json",
+      "Content-Type": "application/json",
     },
     timeout: 300,
   });
@@ -72,7 +72,7 @@ test("Get order details API test with fail on status code", async ({
       user_id: "1",
     },
     headers: {
-      ContentType: "application/json",
+      "Content-Type": "application/json",
     },
     failOnStatusCode: true,
   });

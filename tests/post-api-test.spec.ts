@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-test.only("POST order details API with static JSON Array", async ({ request }) => {
+test("POST order details API with static JSON Array", async ({ request }) => {
   const response = await request.post("http://localhost:3004/addOrder/", {
     data:[{
     user_id: "1",
@@ -22,7 +22,7 @@ test.only("POST order details API with static JSON Array", async ({ request }) =
   }
 ],
  headers: {
-      ContentType: "application/json",
+      "Content-Type": "application/json",
     },
 });
   expect(response.status()).toBe(201);
