@@ -1,13 +1,14 @@
 name: Playwright Tests
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main, issue-* ]
   pull_request:
-    branches: [ main, master ]
+    branches: [ main ]
 jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
@@ -16,11 +17,14 @@ jobs:
     - name: Install dependencies
       run: npm ci
     - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
+      run:  npx playwright install --with-deps
+
     - name: Start restful ecommerce service
-      run: docker compose -f ./docker-compose-ecommerce.yml up -d
+      run:  docker compose -f ./docker-compose-ecommerce.yml up -d
+
     - name: Run Playwright tests
-      run: npm run test
+      run:  npm run test
+
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
