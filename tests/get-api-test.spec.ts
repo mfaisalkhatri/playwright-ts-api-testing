@@ -16,7 +16,7 @@ test("Get Order details API test with status code check", async ({ request }) =>
 test("Get Order details API test with status code 404", async ({ request }) => {
   const response = await request.get("http://localhost:3004/getOrder/", {
     params: {
-      id: 2,
+      id: 222,
     },
   });
 
