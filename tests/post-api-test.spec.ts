@@ -54,4 +54,3 @@ test("POST order details API using JSON file", async ({ request }) => {
 });
   expect(response.status()).toBe(201);
 });
-
