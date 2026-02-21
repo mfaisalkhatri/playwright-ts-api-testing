@@ -17,7 +17,8 @@
     "test": "npx playwright test"
   },
   "devDependencies": {
+    "@faker-js/faker": "^10.3.0",
     "@playwright/test": "^1.57.0",
-    "@types/node": "^25.0.3"
+    "@types/node": "^25.3.0"
   }
 }

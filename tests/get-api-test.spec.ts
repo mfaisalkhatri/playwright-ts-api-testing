@@ -5,6 +5,9 @@ test("Get Order details API test with status code check", async ({ request }) =>
     params: {
       user_id: "1",
     },
+     headers: {
+      "Content-Type": "application/json",
+    },
   });
 
   expect(response.status()).toBe(200);
@@ -13,7 +16,7 @@ test("Get Order details API test with status code check", async ({ request }) =>
 test("Get Order details API test with status code 404", async ({ request }) => {
   const response = await request.get("http://localhost:3004/getOrder/", {
     params: {
-      id: 2,
+      id: 222,
     },
   });
 
@@ -41,7 +44,7 @@ test("Get Order details API test with headers", async ({ request }) => {
       user_id: "1",
     },
     headers: {
-      ContentType: "application/json",
+      "Content-Type": "application/json",
     },
   });
 
@@ -54,7 +57,7 @@ test("Get order details API test with timeout", async ({ request }) => {
       user_id: "1",
     },
     headers: {
-      ContentType: "application/json",
+      "Content-Type": "application/json",
     },
     timeout: 300,
   });
@@ -69,7 +72,7 @@ test("Get order details API test with fail on status code", async ({
       user_id: "1",
     },
     headers: {
-      ContentType: "application/json",
+      "Content-Type": "application/json",
     },
     failOnStatusCode: true,
   });
