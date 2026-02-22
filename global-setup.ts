@@ -1,5 +1,5 @@
 import { request } from "@playwright/test";
-import orders from '../test_data/orders.json' with {type: 'json'};
+import orders from './test_data/orders.json' with {type: 'json'};
 
 async function globalSetup() {
 
