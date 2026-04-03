@@ -17,7 +17,7 @@ export class OrderBuilder {
             product_amount,
             qty,
             tax_amt,
-            total_amt: (product_amount*qty)+tax_amt;
+            total_amt: (product_amount*qty)+tax_amt
         }
     }
 
@@ -64,5 +64,4 @@ export class OrderBuilder {
     build():Order{
         return this.order;
     }
-
 }
