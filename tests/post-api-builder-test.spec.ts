@@ -15,7 +15,7 @@ test("Add Order details using Builder Design Pattern", async ({ request }) => {
   expect(response.status()).toBe(201);
 });
 
-test.only("Add Specific Order details using Builder Design Pattern", async ({ request }) => {
+test("Add Specific Order details using Builder Design Pattern", async ({ request }) => {
   const orderDetails = new OrderBuilder().withUserID("56").withProductName("Donuts").build();
   const orders: Order [] = [orderDetails];
 
