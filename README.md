@@ -14,9 +14,16 @@ You will get the answers to the following questions and its respective working c
 - How to verify the Response Status Code?
 - How to verify the Response Body?
 - How to attach Response data to the Playwright Report?
+- How to test POST API requests?
+- Builder Pattern + Faker in API Test Automation using Playwright with TypeScript
 
-## :writing_hand: Blog Links
+# :writing_hand: Blog Links
 - [What is API Testing?](https://mfaisalkhatri.github.io/2020/08/08/apitesting/)
+- [Global Setup in Playwright TypeScript for API Testing](https://medium.com/gitconnected/global-setup-in-playwright-typescript-for-api-testing-ce7abe0173cf)
+- [How to test GET API requests with Playwright TypeScript](https://medium.com/gitconnected/how-to-test-get-api-requests-with-playwright-typescript-7caf7bf790b2)
+- [How to Verify Response Data in API Testing with Playwright TypeScript](https://medium.com/gitconnected/how-to-verify-response-data-in-playwright-typescript-4b288ad46616)
+- [How to test POST API Requests with Playwright TypeScript](https://medium.com/gitconnected/how-to-test-post-api-requests-with-playwright-typescript-5a210ed2f500)
+-  [Builder Pattern + Faker in API Test Automation using Playwright with TypeScript](https://medium.com/gitconnected/builder-pattern-faker-in-api-test-automation-using-playwright-with-typescript-447730272483)
 
 ## :movie_camera: Tutorial Video
 
