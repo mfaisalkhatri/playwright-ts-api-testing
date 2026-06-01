@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import orders from '../test_data/dummy_orders.json' with {type: 'json'};
+import orders from '../test-data/dummy_orders.json' with {type: 'json'};
 
 test("POST order details API with static JSON Array", async ({ request }) => {
   const response = await request.post("http://localhost:3004/addOrder/", {

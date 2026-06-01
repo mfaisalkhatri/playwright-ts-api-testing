@@ -1,0 +1,47 @@
+[
+  {
+    "user_id": "12",
+    "product_id": "101",
+    "product_name": "Dove Shampoo",
+    "product_amount": 15,
+    "qty": 2,
+    "tax_amt": 1,
+    "total_amt": 31
+  },
+  {
+    "user_id": "23",
+    "product_id": "102",
+    "product_name": "Colgate Toothpaste",
+    "product_amount": 8,
+    "qty": 3,
+    "tax_amt": 2,
+    "total_amt": 26
+  },
+  {
+    "user_id": "34",
+    "product_id": "103",
+    "product_name": "Surf Excel Detergent",
+    "product_amount": 12,
+    "qty": 1,
+    "tax_amt": 1,
+    "total_amt": 13
+  },
+  {
+    "user_id": "45",
+    "product_id": "104",
+    "product_name": "Parle-G Biscuits",
+    "product_amount": 3,
+    "qty": 5,
+    "tax_amt": 3,
+    "total_amt": 18
+  },
+  {
+    "user_id": "56",
+    "product_id": "105",
+    "product_name": "Lux Soap",
+    "product_amount": 6,
+    "qty": 4,
+    "tax_amt": 1,
+    "total_amt": 25
+  }
+]
