@@ -9,9 +9,6 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
 
-    container:
-      image: mcr.microsoft.com/playwright:v1.60.0-noble
-
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
@@ -19,6 +16,17 @@ jobs:
         node-version: lts/*
     - name: Install dependencies
       run: npm ci
+      env:
+        PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1
+  
+    - name: Cache Playwright Browsers
+      uses: actions/cache@v4
+      with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+        
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps chromium
 
     - name: Start restful ecommerce service
       run:  docker compose -f ./docker-compose-ecommerce.yml up -d
