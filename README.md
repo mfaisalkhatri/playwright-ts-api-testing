@@ -16,6 +16,8 @@ You will get the answers to the following questions and its respective working c
 - How to attach Response data to the Playwright Report?
 - How to test POST API requests?
 - Builder Pattern + Faker in API Test Automation using Playwright with TypeScript
+- How to write tests for `PUT`, `PATCH`, and `DELETE` requests?
+- How to perform data driven testing with static data, JSON files
 
 # :writing_hand: Blog Links
 - [What is API Testing?](https://mfaisalkhatri.github.io/2020/08/08/apitesting/)
@@ -24,6 +26,10 @@ You will get the answers to the following questions and its respective working c
 - [How to Verify Response Data in API Testing with Playwright TypeScript](https://medium.com/gitconnected/how-to-verify-response-data-in-playwright-typescript-4b288ad46616)
 - [How to test POST API Requests with Playwright TypeScript](https://medium.com/gitconnected/how-to-test-post-api-requests-with-playwright-typescript-5a210ed2f500)
 -  [Builder Pattern + Faker in API Test Automation using Playwright with TypeScript](https://medium.com/gitconnected/builder-pattern-faker-in-api-test-automation-using-playwright-with-typescript-447730272483)
+- [How to test a PUT, PATCH, and DELETE API request using Playwright TypeScript?](https://medium.com/gitconnected/how-to-test-a-put-patch-and-delete-api-request-using-playwright-typescript-2cd61e313b10?sharedUserId=iamfaisalkhatri)
+- [Data Driven API Testing in Playwright TypeScript with Static Test Data](https://medium.com/gitconnected/data-driven-api-testing-in-playwright-typescript-part-1-cc4f7deaf74a?sharedUserId=iamfaisalkhatri)
+- [Data Driven API Testing in Playwright TypeScript with JSON File ](https://medium.com/gitconnected/data-driven-api-testing-in-playwright-typescript-part-2-5d6e84f5da45?sharedUserId=iamfaisalkhatri)
+
 
 ## :movie_camera: Tutorial Video
 
