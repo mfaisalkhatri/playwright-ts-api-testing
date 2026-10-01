@@ -29,11 +29,12 @@ You will get the answers to the following questions and its respective working c
 - [How to test a PUT, PATCH, and DELETE API request using Playwright TypeScript?](https://medium.com/gitconnected/how-to-test-a-put-patch-and-delete-api-request-using-playwright-typescript-2cd61e313b10?sharedUserId=iamfaisalkhatri)
 - [Data Driven API Testing in Playwright TypeScript with Static Test Data](https://medium.com/gitconnected/data-driven-api-testing-in-playwright-typescript-part-1-cc4f7deaf74a?sharedUserId=iamfaisalkhatri)
 - [Data Driven API Testing in Playwright TypeScript with JSON File ](https://medium.com/gitconnected/data-driven-api-testing-in-playwright-typescript-part-2-5d6e84f5da45?sharedUserId=iamfaisalkhatri)
+- [Data-Driven Testing in Playwright TypeScript with CSV Files](https://medium.com/gitconnected/data-driven-testing-in-playwright-typescript-with-csv-files-64158724dbb8?sharedUserId=iamfaisalkhatri)
 
 
 ## :movie_camera: Tutorial Video
 
-[![Watch the video](https://img.youtube.com/vi/UOYuVCkUM5M/hqdefault.jpg)](https://www.youtube.com/watch?v=UOYuVCkUM5M&t=1s)
+[![Watch the video](https://img.youtube.com/vi/UOYuVCkUM5M/hqdefault.jpg)](https://youtube.com/playlist?list=PLMer2TvhZIw-N5p555hrlW_CLn2iaXfw7&si=z0mjWlT1LDnxvhDz)
 
 ## :question: Need Assistance?
 
