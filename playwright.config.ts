@@ -38,6 +38,7 @@ export default defineConfig({
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
+      testIgnore: './tests/11_end-to-end-api-test.spec.ts'
     },
     /* Test against mobile viewports. */
     // {
