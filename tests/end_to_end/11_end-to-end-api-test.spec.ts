@@ -1,7 +1,8 @@
-import { test, expect } from "../fixtures/auth.fixture.js";
-import orders from "../test-data/orders.json" with { type: "json" };
-import updated_orders from "../test-data/updated_orders.json" with { type: "json" };
+import { test, expect } from "../../fixtures/auth.fixture.js";
+import orders from "../../test-data/orders.json" with { type: "json" };
+import updated_order from "../../test-data/updated_order.json" with { type: "json" };
 
+test.describe.configure({mode: "serial"})
 test.describe("End to End API tests", () => {
   let orderid: number;
   test("POST order details API using JSON file", async ({ request }) => {
@@ -47,7 +48,7 @@ test.describe("End to End API tests", () => {
     const response = await request.put(
       `http://localhost:3004/updateOrder/${orderid}`,
       {
-        data: updated_orders,
+        data: updated_order,
         headers: {
           "Content-Type": "application/json",
           Authorization: `${token}`,
@@ -55,20 +56,21 @@ test.describe("End to End API tests", () => {
       },
     );
 
-    const responseBody = await response.json();
     expect(response.status()).toBe(200);
+
+    const responseBody = await response.json();
 
     expect(responseBody).toEqual(
       expect.objectContaining({
         message: "Order updated successfully!",
         order: expect.objectContaining({
-          user_id: updated_orders[0].user_id,
-          product_id: updated_orders[0].product_id,
-          product_name: updated_orders[0].product_name,
-          product_amount: updated_orders[0].product_amount,
-          qty: updated_orders[0].qty,
-          tax_amt: updated_orders[0].tax_amt,
-          total_amt: updated_orders[0].total_amt,
+          user_id: updated_order.user_id,
+          product_id: updated_order.product_id,
+          product_name: updated_order.product_name,
+          product_amount: updated_order.product_amount,
+          qty: updated_order.qty,
+          tax_amt: updated_order.tax_amt,
+          total_amt: updated_order.total_amt,
         }),
       }),
     );
