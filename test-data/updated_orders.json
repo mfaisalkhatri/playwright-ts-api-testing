@@ -1,0 +1,11 @@
+[
+  {
+    "user_id": "2",
+    "product_id": "80",
+    "product_name": "Lindt Swiss Dark Chocolate",
+    "product_amount": 34,
+    "qty": 1,
+    "tax_amt": 2,
+    "total_amt": 36
+  }
+]
