@@ -44,6 +44,13 @@ jobs:
       env:
         BLOB_REPORT_DIR: blob-report/smoke
       run:  npm run test:e2e
+
+    - name: Prepare Playwright reports
+      if: ${{ !cancelled() }}
+      run: |
+        mkdir -p merged-blob-report
+        cp blob-report/smoke/*.zip merged-blob-report/ || true
+        cp blob-report/e2e/*.zip merged-blob-report/ || true
       
     - name: Merge Playwright reports
       if: ${{ !cancelled() }}
