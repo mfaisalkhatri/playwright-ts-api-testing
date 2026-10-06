@@ -33,10 +33,17 @@ jobs:
 
     - name: Run Playwright Smoke tests
       run:  npm run test:smoke
+      env:
+          BLOB_OUTPUT_DIR: blob-report/smoke
 
     - name: Run Playwright End to End tests
       run:  npm run test:e2e
+      env:
+          BLOB_OUTPUT_DIR: blob-report/e2e
       
+    - name: Merge Playwright reports
+      if: ${{ !cancelled() }}
+      run: npx playwright merge-reports --reporter html blob-report
 
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
