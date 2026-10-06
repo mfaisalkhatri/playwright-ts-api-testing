@@ -33,7 +33,7 @@ const orderData: Order[] = [
 
 test.describe("Data Driven Create Order API Tests with Static Data", () => {
   for (const order of orderData) {
-    test(`Create a new order - ${order.product_name}`, async ({ request }) => {
+    test(`Create a new order - ${order.product_name}`, {tag: '@smoke'},async ({ request }) => {
       const orders: Order[] = [order];
       const response = await request.post("http://localhost:3004/addOrder/", {
         data: orders,

@@ -12,7 +12,7 @@ const orders: Order[] = getCSVTestData<Order>(
 );
 
 orders.forEach((order: Order) => {
-  test(`Create order for -> ${order.product_name}`, async ({ request }) => {
+  test(`Create order for -> ${order.product_name}`,{tag: '@smoke'}, async ({ request }) => {
     const orders: Order[] = [order];
 
     const response = await request.post("http://localhost:3004/addOrder/", {

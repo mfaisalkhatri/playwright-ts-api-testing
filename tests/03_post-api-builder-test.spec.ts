@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 import { OrderBuilder } from "../builders/order.builder.js";
 import { Order } from "../models/order.model.js";
 
-test("Add Order details using Builder Design Pattern", async ({ request }) => {
+test("Add Order details using Builder Design Pattern", {tag: '@smoke'},async ({ request }) => {
   const orderDetails = new OrderBuilder().build();
   const orders: Order [] = [orderDetails];
 
@@ -15,7 +15,7 @@ test("Add Order details using Builder Design Pattern", async ({ request }) => {
   expect(response.status()).toBe(201);
 });
 
-test("Add Specific Order details using Builder Design Pattern", async ({ request }) => {
+test("Add Specific Order details using Builder Design Pattern", {tag: '@smoke'},async ({ request }) => {
   const orderDetails = new OrderBuilder().withUserID("56").withProductName("Donuts").build();
   const orders: Order [] = [orderDetails];
 

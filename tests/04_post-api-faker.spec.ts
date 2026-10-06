@@ -23,7 +23,7 @@ export function createRandomOrders(count:number) {
 }
 
 
-test('POST order details API using Faker library', async({request}) => {
+test('POST order details API using Faker library', {tag: '@smoke'},async({request}) => {
   
     const orderData = createRandomOrders(5);
     console.log(orderData);
