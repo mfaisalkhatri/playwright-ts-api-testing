@@ -54,7 +54,7 @@ jobs:
       
     - name: Merge Playwright reports
       if: ${{ !cancelled() }}
-      run: npx playwright merge-reports --reporter html blob-report
+      run: npx playwright merge-reports --reporter html merged-blob-report
 
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
