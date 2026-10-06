@@ -42,7 +42,7 @@ jobs:
 
     - name: Run Playwright End to End tests
       env:
-        BLOB_REPORT_DIR: blob-report/smoke
+        BLOB_REPORT_DIR: blob-report/e2e
       run:  npm run test:e2e
 
     - name: Prepare Playwright reports
