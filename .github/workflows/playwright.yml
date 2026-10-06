@@ -31,8 +31,12 @@ jobs:
     - name: Start restful ecommerce service
       run:  docker compose -f ./docker-compose-ecommerce.yml up -d
 
-    - name: Run Playwright tests
-      run:  npm run test
+    - name: Run Playwright Smoke tests
+      run:  npm run test:smoke
+
+    - name: Run Playwright End to End tests
+      run:  npm run test:e2e
+      
 
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
