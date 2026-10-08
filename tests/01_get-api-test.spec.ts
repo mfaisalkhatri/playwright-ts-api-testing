@@ -1,19 +1,21 @@
 import { test, expect } from "@playwright/test";
 
-test("Get Order details API test with status code check", async ({
-  request,
-}) => {
-  const response = await request.get("http://localhost:3004/getOrder/", {
-    params: {
-      user_id: "1",
-    },
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+test(
+  "Get Order details API test with status code check",
+  { tag: "@smoke" },
+  async ({ request }) => {
+    const response = await request.get("http://localhost:3004/getOrder/", {
+      params: {
+        user_id: "1",
+      },
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
-  expect(response.status()).toBe(200);
-});
+    expect(response.status()).toBe(200);
+  },
+);
 
 test(
   "Get Order details API test with status code 404",
