@@ -1,17 +1,19 @@
 import { test, expect } from "../fixtures/auth.fixture.js";
 
-test("Update Partial Order using PATCH API Request", async ({
-  request,
-  token,
-}) => {
+test("Update Order using PUT API Request", {tag: '@smoke'},async ({ request, token }) => {
   const updatedOrder = {
-    user_id: "98",
-    product_id: "214",
+    user_id: "89",
+    product_id: "124",
+    product_name: "Lindt Choclate",
+    product_amount: 50,
+    qty: 3,
+    tax_amt: 10,
+    total_amt: 160,
   };
 
   const id = 1;
-  const response = await request.patch(
-    `http://localhost:3004/partialUpdateOrder/${id}`,
+  const response = await request.put(
+    `http://localhost:3004/updateOrder/${id}`,
     {
       data: JSON.stringify(updatedOrder),
       headers: {
@@ -28,8 +30,8 @@ test("Update Partial Order using PATCH API Request", async ({
     expect.objectContaining({
       message: "Order updated successfully!",
       order: expect.objectContaining({
-        user_id: "98",
-        product_id: "214",
+        product_id: "124",
+        product_name: "Lindt Choclate",
       }),
     }),
   );

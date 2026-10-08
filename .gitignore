@@ -6,4 +6,5 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+/merged-blob-report/
 .env

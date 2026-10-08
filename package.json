@@ -14,7 +14,8 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test"
+    "test:smoke": "npx playwright test --grep @smoke",
+    "test:e2e": "npx playwright test --grep @endtoend"
   },
   "devDependencies": {
     "@faker-js/faker": "^10.5.0",

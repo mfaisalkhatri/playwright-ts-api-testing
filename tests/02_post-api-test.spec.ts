@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import orders from '../test-data/dummy_orders.json' with {type: 'json'};
 
-test("POST order details API with static JSON Array", async ({ request }) => {
+test("POST order details API with static JSON Array", {tag: '@smoke'}, async ({ request }) => {
   const response = await request.post("http://localhost:3004/addOrder/", {
     data:[{
     user_id: "1",
@@ -26,7 +26,7 @@ test("POST order details API with static JSON Array", async ({ request }) => {
   expect(response.status()).toBe(201);
 });
 
-test("POST order details API using JSON.Stringify", async ({ request }) => {
+test("POST order details API using JSON.Stringify",{tag: '@smoke'}, async ({ request }) => {
 
     const orderData = [{
         user_id: "5",
@@ -47,7 +47,7 @@ test("POST order details API using JSON.Stringify", async ({ request }) => {
   expect(response.status()).toBe(201);
 });
 
-test("POST order details API using JSON file", async ({ request }) => {
+test("POST order details API using JSON file",{tag: '@smoke'}, async ({ request }) => {
 
   const response = await request.post("http://localhost:3004/addOrder/", {
     data: orders,

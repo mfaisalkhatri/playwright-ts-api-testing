@@ -1,9 +1,8 @@
 import { test, expect } from "../fixtures/auth.fixture.js";
 
-test("Delete an order using DELETE API Request", async ({ request, token }) => {
-  const id = 6;
+test("Delete all orders",{tag: '@smoke'}, async ({ request, token }) => {
   const response = await request.delete(
-    `http://localhost:3004/deleteOrder/${id}`,
+    `http://localhost:3004/deleteAllOrders`,
     {
       headers: {
         Authorization: `${token}`,

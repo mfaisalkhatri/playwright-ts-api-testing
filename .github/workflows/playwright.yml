@@ -8,6 +8,10 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    
+    env:
+      USERNAME: ${{ secrets.USERNAME }}
+      PASSWORD: ${{ secrets.PASSWORD }}
 
     steps:
     - uses: actions/checkout@v4
@@ -31,8 +35,26 @@ jobs:
     - name: Start restful ecommerce service
       run:  docker compose -f ./docker-compose-ecommerce.yml up -d
 
-    - name: Run Playwright tests
-      run:  npm run test
+    - name: Run Playwright Smoke tests
+      env:
+        BLOB_REPORT_DIR: blob-report/smoke
+      run:  npm run test:smoke
+
+    - name: Run Playwright End to End tests
+      env:
+        BLOB_REPORT_DIR: blob-report/e2e
+      run:  npm run test:e2e
+
+    - name: Prepare Playwright reports
+      if: ${{ !cancelled() }}
+      run: |
+        mkdir -p merged-blob-report
+        cp blob-report/smoke/*.zip merged-blob-report/ || true
+        cp blob-report/e2e/*.zip merged-blob-report/ || true
+      
+    - name: Merge Playwright reports
+      if: ${{ !cancelled() }}
+      run: npx playwright merge-reports --reporter html merged-blob-report
 
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
@@ -40,3 +62,4 @@ jobs:
         name: playwright-report
         path: playwright-report/
         retention-days: 30
+    
